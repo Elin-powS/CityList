@@ -109,11 +109,7 @@ public class MainActivityTest {
         onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Munshigonj")); //Type a city name
         Espresso.pressBack();
         onView(withId(R.id.button_confirm)).perform(click());
-
-        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Faridpur")); //Type a city name
-        Espresso.pressBack();
-        onView(withId(R.id.button_confirm)).perform(click());
+        
 
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).perform(click());
         onView(withId(R.id.showactivity)).check(matches(isDisplayed()));
